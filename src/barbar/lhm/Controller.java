@@ -143,6 +143,7 @@ public class Controller {
 
     @FXML
     public void nextButtonOnClick(ActionEvent actionEvent) {
+        textBody.selectRange(textBody.getCaretPosition(), textBody.getCaretPosition());
         selectSuspiciousWord(suspiciousWordIndex+1);
     }
 
