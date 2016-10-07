@@ -1,0 +1,62 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane fx:controller="barbar.lhm.Controller" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <columnConstraints>
+        <ColumnConstraints minWidth="100"/>
+        <ColumnConstraints halignment="RIGHT" minWidth="600"/>
+        <ColumnConstraints minWidth="50"/>
+    </columnConstraints>
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+
+    <Label text="Dictionary:"
+           GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+    <Text fx:id="dictionaryFileName" text="" x="1000"
+          GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+    <Button fx:id="loadDictionaryButton" text="Load" onAction="#loadDictionaryButtonOnClick"
+            GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+
+    <Label text="Text:"
+           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <Text fx:id="textFileName" text=""
+          GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Button fx:id="loadTextButton" text="Load" onAction="#loadTextButtonOnClick"
+            GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+    <TextArea fx:id="textBody"
+              text="One two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty"
+              wrapText="true"
+              editable="false"
+              minHeight="600"
+              GridPane.columnIndex="0" GridPane.rowIndex="2"
+              GridPane.columnSpan="3"/>
+
+    <HBox spacing="10" alignment="center"
+          GridPane.columnIndex="0" GridPane.rowIndex="3"
+          GridPane.columnSpan="4">
+
+        <Button fx:id="scanParallelStreamButton" text="Scan Using ParallelStream" onAction="#scanParallelStreamButtonOnClick"/>
+        <Button fx:id="scanThreadPoolButton" text="Scan Using ThreadPool" onAction="#scanThreadPoolButtonOnClick"/>
+
+        <TextField fx:id="correctWordText" text="" prefWidth="200"/>
+
+        <Button fx:id="correctButton" text="Correct" onAction="#correctButtonOnClick"/>
+
+        <Button fx:id="nextButton" text="Next" onAction="#nextButtonOnClick"/>
+
+    </HBox>
+
+    <Button fx:id="saveTextButton" text="Save" onAction="#saveTextButtonOnClick"
+            GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Button fx:id="exitButton" text="Exit" onAction="#exitButtonOnClick"
+            GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+
+</GridPane>
